@@ -37,4 +37,15 @@ if st.button("Calculate BMI"):
         st.success(
             f"{name}, with your weight {wt} kg and height {ht} cm, "
             f"your BMI is {bmi}"
+        
         )
+        prompt = f"Analyze the {bmi} in less than 100 words"
+        response = client.chat.completions.create(
+        model="z-ai/glm-5.3-flash",
+        messages=[
+        {"role": "user", "content": prompt}
+        ]
+        )
+
+        # print(response.text)
+        print(response.choices[0].message.content)
