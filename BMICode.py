@@ -48,4 +48,4 @@ if st.button("Calculate BMI"):
         )
 
         # print(response.text)
-        print(response.choices[0].message.content)
+        st.write(response.choices[0].message.content)
